@@ -1,4 +1,8 @@
-<svg height="600" width="600">
+// The following source code consists of both the SVG for a basic emoji that features changing eye colours on click and changing mouth expressions, executed by JQuery
+
+
+// SVG source code
+<svg height="600" width="600"> // Dimensions of SVG
 
     // Background page colour
     <polygon points="0,0 600,0 600,600 0,600" fill="pink"/>
@@ -39,50 +43,58 @@
     font-family="Verdana" font-size="100" id="text">
         Boo </text>
 </svg>
+// End of SVG source code
 
-var RightEyeColourDot = $("#right-eye-dot");
-var LeftEyeColourDot = $("#left-eye-dot");
+// JQuery source code
+var RightEyeColourDot = $("#right-eye-dot"); // Variable creation of right eye dot
+var LeftEyeColourDot = $("#left-eye-dot"); // Variable creation of left eye dot
 
+// Event listener for right eye dot on click
 RightEyeColourDot.click(function() {
-	RightEyeColourDot.attr("fill", "red");
+	RightEyeColourDot.attr("fill", "red"); // Change colour to red
 });
 
+// Event listener for left eye dot on click
 LeftEyeColourDot.click(function() {
-	LeftEyeColourDot.attr("fill", "blue");
+	LeftEyeColourDot.attr("fill", "blue"); // Change colour blue
 });
 
-var faceShape = $("#face");
+var faceShape = $("#face"); // Variable creation of face shape
 
-var FaceOrange;
-FaceOrange = true;
+var FaceOrange; // Variable creation for face orange
+FaceOrange = true; // Sets face orange variable to a value of true
 
-var changeMouth = $("#mouth");
+var changeMouth = $("#mouth"); // Variable creation of change mouth
 
-var Puzzled;
-Puzzled = true;
+var Puzzled; // Variable creation of puzzled
+Puzzled = true; // Sets puzzled variable to a value of true
 
+// Event listener for mouth on click
 changeMouth.click(function() {
 
-    if(Puzzled == true){
-        // Face is smiley - make it puzzled
-        changeMouth.attr("d", "M 250,450 q 100,-200 100,0 z");
+	// Changes mouth expression if puzzled is equal to true, as defined above
+    	if(Puzzled == true){
+        	// Face is smiley - make it puzzled
+        	changeMouth.attr("d", "M 250,450 q 100,-200 100,0 z"); // Change expression
 
-        Puzzled = false;
+       		Puzzled = false; // Set puzzled variable to false
 
-    } else {
+    	} else { // If puzzled value not equal to true, execute
         
-        changeMouth.attr("d", "M 150,360 q 150,200 300,0 z");
+        	changeMouth.attr("d", "M 150,360 q 150,200 300,0 z"); // Change expression
         
-        Puzzled = true;
-    }
+        	Puzzled = true; // Set puzzled variable to true
+    	}
     
-    if(FaceOrange == true){
-        // Face is orange - make it yellow
-        faceShape.attr("fill", "yellow");
+	// Changes face colour to yellow if variable is true, as defined above
+    	if(FaceOrange == true){
+        	// Face is orange - make it yellow
+	        faceShape.attr("fill", "yellow"); // Change face colour
 
-        FaceOrange = false;
+	        FaceOrange = false; // Set face orange variable to false
 
-    }
+	}
 });
+// End of Jquery source code
 
-http://jsfiddle.net/7x2u81nb/
+http://jsfiddle.net/7x2u81nb/1/
