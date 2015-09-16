@@ -1,4 +1,5 @@
-// The following source code consists of both the SVG for a basic emoji that features changing eye colours on click and changing mouth expressions, executed by JQuery
+<!-- The following source code consists of both the SVG for a basic emoji that features changing eye colours on click and
+changing mouth expressions, executed by JQuery -->
 
 
 // SVG source code
