@@ -1,0 +1,88 @@
+<svg height="600" width="600">
+
+    // Background page colour
+    <polygon points="0,0 600,0 600,600 0,600" fill="pink"/>
+    
+    // Background face colour
+    <circle cx="300" cy="300" r="200" fill="#FF3D00" id="face"/>
+    
+    
+    // Left eye background colour
+    <circle cx="380" cy="220" r="40" fill="white" id="left-eye"/>
+            // Left eye centre eye dot
+            <circle cx="380" cy="220" r="15" fill="black" id="left-eye-dot"/>
+    
+    // Right eye background colour
+    <circle cx="220" cy="220" r="40" fill="white" id="right-eye"/>
+            // Right eye centre eye dot
+            <circle cx="220" cy="220" r="15" fill="black" id="right-eye-dot"/>
+    
+    // Nose
+    <circle cx="300" cy="300" r="30" fill="black" id="nose"/>
+
+    
+    // Left eyebrow
+    <line x1="250" x2="170" y1="150" y2="180"
+      stroke-width="10" stroke="black" stroke-linecap="round" id="left-eyebrow"/>    
+    
+    // Right eyebrow
+    <line x1="420" x2="330" y1="170" y2="140"
+      stroke-width="10" stroke="black" stroke-linecap="round" id="right-eyebrow"/>
+    
+    // Mouth
+    <path fill="white" stroke="black" stroke-width="8"
+    d="M 150,360 q 150,200 300,0 z" id="mouth"/>
+    
+    
+    // Text
+    <text x="190" y="70" fill="red"
+    font-family="Verdana" font-size="100" id="text">
+        Boo </text>
+</svg>
+
+var RightEyeColourDot = $("#right-eye-dot");
+var LeftEyeColourDot = $("#left-eye-dot");
+
+RightEyeColourDot.click(function() {
+	RightEyeColourDot.attr("fill", "red");
+});
+
+LeftEyeColourDot.click(function() {
+	LeftEyeColourDot.attr("fill", "blue");
+});
+
+var faceShape = $("#face");
+
+var FaceOrange;
+FaceOrange = true;
+
+var changeMouth = $("#mouth");
+
+var Puzzled;
+Puzzled = true;
+
+changeMouth.click(function() {
+
+    if(Puzzled == true){
+        // Face is smiley - make it puzzled
+        changeMouth.attr("d", "M 250,450 q 100,-200 100,0 z");
+
+        Puzzled = false;
+
+    } else {
+        
+        changeMouth.attr("d", "M 150,360 q 150,200 300,0 z");
+        
+        Puzzled = true;
+    }
+    
+    if(FaceOrange == true){
+        // Face is orange - make it yellow
+        faceShape.attr("fill", "yellow");
+
+        FaceOrange = false;
+
+    }
+});
+
+http://jsfiddle.net/7x2u81nb/
